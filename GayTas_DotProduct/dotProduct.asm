@@ -2,41 +2,33 @@ section .text
 global dotProduct86
 
 dotProduct86:
-    ; Parameters are passed in registers: rcx, rdx, r8, r9
-    ; rcx contains the size of the arrays (n)
-    ; rdx contains the initial value of the dot product (sdot)
-    ; r8 contains the address of array A
-    ; r9 contains the address of array B
+    ; Parameters are passed in registers: rcx, rdx, r8
+    ; rcx contains the address of the float array A
+    ; rdx contains the address of the float array B
+    ; r8 contains the value of n where n is the size of the vector (array)
 
-    ; Check for valid pointers
-    test r8, r8  ; Test if pointer to A is null
-    jz endDotProduct  ; If null, exit function
-    test r9, r9  ; Test if pointer to B is null
-    jz endDotProduct  ; If null, exit function
+    ;set the values of xmm0; rax to zero
+    ;readying them for data handling
+    xorps xmm0, xmm0
+    xor rax, rax
 
-    ; Check if size of arrays is non-negative
-    cmp rcx, 0
-    jle endDotProduct  ; If size <= 0, exit function
+    dotProLP:
+    cmp rax, r8
+    ;go to end if the counter is equal or greater than the n
+    je end
 
-    ; Initialize xmm3 to sdot
-    movss xmm3, dword [rdx]
+    ;move the value of the array A (rcx) to xmm1
+    movss xmm1, [rcx + rax * 4]
+    ;multiply the value of the array B (rdx) with xmm1 (array A) and store it in xmm1
+    mulss xmm1, [rdx + rax * 4]
+    ;add the value of xmm1 to previous value of xmm0
+    addss xmm0, xmm1
 
-    ; Loop through the arrays
-    xor r10, r10  ; Counter for loop
-dotProductLoop:
-    cmp r10, rcx  ; Check if counter reached n
-    jge endDotProduct  ; If greater or equal, exit loop
-    ; Load elements from arrays A and B
-    movss xmm0, dword [r8 + r10 * 4]  ; Load A[x] into xmm0
-    movss xmm1, dword [r9 + r10 * 4]  ; Load B[x] into xmm1
-    ; Multiply elements and accumulate the result
-    mulss xmm1, xmm0  ; Multiply A[x] with B[x]
-    addss xmm3, xmm1  ; Accumulate the result
-    inc r10  ; Increment loop counter
-    jmp dotProductLoop  ; Repeat the loop
+    ;incement the counter
+    inc rax
+    ;repeat the loop
+    jmp dotProLP
 
-endDotProduct:
-    ; Store the result back to sdot
-    movss dword [rdx], xmm3
-
+    end:
+    ;return xmm0 to the C program
     ret
