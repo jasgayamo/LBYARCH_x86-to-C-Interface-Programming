@@ -1,0 +1,5 @@
+﻿  main.c
+C:\Users\oldma\source\repos\LBYARCH_x86-to-C-Interface-Programming\GayTas_DotProduct\main.c(106,9): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\oldma\source\repos\LBYARCH_x86-to-C-Interface-Programming\GayTas_DotProduct\main.c(127,9): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\oldma\source\repos\LBYARCH_x86-to-C-Interface-Programming\GayTas_DotProduct\main.c(148,9): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+  GayTas_DotProduct.vcxproj -> C:\Users\oldma\source\repos\LBYARCH_x86-to-C-Interface-Programming\GayTas_DotProduct\x64\Debug\GayTas_DotProduct.exe

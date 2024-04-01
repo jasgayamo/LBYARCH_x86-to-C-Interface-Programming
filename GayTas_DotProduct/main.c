@@ -68,7 +68,7 @@ static void print86display() {
 void printCMP(int n, float holderSDOT, float sdot) {
     if (holderSDOT == sdot) {
         printf("\nFor n = %d:\n", n);
-        printf("\nBoth Outputs of C and x86_64 Kernels are the Same\n");
+        printf("Both Outputs of C and x86_64 Kernels are the Same\n");
     }
     else {
         printf("\nFor n = %d:\n", n);
@@ -80,6 +80,12 @@ static void printDOTP() {
     printf("_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-\n");
     printf("CALCULATING DOT PRODUCT FOR TWO VECTORS\n");
     printf("_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-\n");
+}
+
+static void pressToExit() {
+    //Wait for a key press before closing the application
+    printf("\nPress any key to close the application...");
+    getchar();
 }
 
 int main(int argc, char* argv[]) {
@@ -158,8 +164,14 @@ int main(int argc, char* argv[]) {
     //Compare the values of holderSDOT(value of C kernel) and sdot(value of x86_64) where n = 2^30
     printCMP(n, holderSDOT, sdot);
 
+    //Close the application with a button press
+    pressToExit();
+
+    //free the memory allocated to the arrray (vectors) A and B
     free(vectorA);
     free(vectorB);
+
+
 
     return 0;
 
