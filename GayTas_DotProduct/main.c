@@ -1,4 +1,4 @@
-//Marc Lowell Anthony O. Tasarra, Jasmine B. Gayamo
+//S14 Marc Lowell Anthony O. Tasarra, Jasmine B. Gayamo
 
 #include <stdio.h>
 #include <stdlib.h>
