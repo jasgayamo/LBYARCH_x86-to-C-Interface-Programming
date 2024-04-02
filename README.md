@@ -1,5 +1,5 @@
 # LBYARCH_x86-to-C-Interface-Programming
-This program will compute the dot product of two scalar vectors. Its outputs are in **single-precision float**. The program contains both a **C kernel** and an **x86_64 Assembly kernel**. Both of the kernels will be tested **at least 30 times** to get the average time of their execution. This will be used for the analysis later on. The arrays are populated with **random** float numbers. The size of array to be tested are **2<sup>20</sup>**, **2<sup>24</sup>**, and **2<sup>30</sup>**. The program will run on the **debug mode** of the Visual Studio and on the **release mode** of the Visual Studio.
+  This program will compute the dot product of two scalar vectors. Its outputs are in **single-precision float**. The program contains both a **C kernel** and an **x86_64 Assembly kernel**. Both of the kernels will be tested **at least 30 times** to get the average time of their execution. This will be used for the analysis later on. The arrays are populated with **random** float numbers. The size of array to be tested are **2<sup>20</sup>**, **2<sup>24</sup>**, and **2<sup>30</sup>**. The program will run on the **debug mode** of the Visual Studio and on the **release mode** of the Visual Studio.
 ## Screenshot of the C Output
 This screenshot is taken from the program when n is equal to 2<sup>20</sup>.
 
@@ -156,17 +156,19 @@ The program is run for thirty (30) times to get the average runtime of the kerne
 
 ## Analysis
 ### Debug Mode
-When operating in debug mode, the code execution tends to be unoptimized and is likely
+  When operating in debug mode, the code execution tends to be unoptimized and is likely
 to incur longer execution times as compared to release mode, mainly due to the presence of
 additional debugging information and less aggressive compiler optimizations. We conducted 30
 runs in debug mode and recorded the execution times of the C and assembly implementations.
 Despite the possibility of extended execution times due to debugging overhead, we observed
-that the debug mode runs demonstrated consistent and stable behavior throughout.
+that the debug mode runs demonstrated consistent and stable behavior throughout. 
+  In the tables above, we can see that the average performance of C kernel is 3.0836 seconds, while the average performance of the x86_64 Assembly kernel is only 0.00203 seconds. There is a 3.08157 difference between the two. There is a significant difference between the two, thus a x86_54 Assembly kernel is much faster than a C kernel when runned in Debug Mode.
 ### Release Mode
-In contrast to debug mode, release mode compilation involves optimizing code execution
+  In contrast to debug mode, release mode compilation involves optimizing code execution
 to maximize performance. We also conducted 30 runs of the program in release mode to
 capture the execution times. The optimizations applied during release mode compilation
 resulted in shorter execution times compared to debug mode. This is because, during release
 mode compilation, the compiler eliminates overhead and unnecessary functions, which
 enhances performance. In release mode, the code is optimized for performance by the compiler,
 resulting in a notable improvement in execution times.
+  In the tables above, we can see that the average performance of C kernel is 0.603 seconds, while the average performance of the x86_64 Assembly kernel is only 0.743 seconds. There is a 0.14 difference between the two. This shows that the C kernel is on par with the performance of the x86_64 Assembly kernel. There is no significant difference with the performance of the two kernels when run in the Release Mode.
