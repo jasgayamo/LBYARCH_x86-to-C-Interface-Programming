@@ -1,5 +1,5 @@
 # LBYARCH_x86-to-C-Interface-Programming
-This program will compute the dot product of two scalar vectors. Its outputs are in **single-precision float**. The program contains both a **C kernel** and an **x86_64 Assembly kernel**. Both of the kernels will be tested **at least 30 times** to get the average time of their execution. This will be used for the analysis later on. The arrays are populated with random numbers. The size of array to be tested are **2<sup>20</sup>**, **2<sup>24</sup>**, and **2<sup>30</sup>**. The program will run on the **debug mode** of the Visual Studio and on the **release mode** of the Visual Studio.
+This program will compute the dot product of two scalar vectors. Its outputs are in **single-precision float**. The program contains both a **C kernel** and an **x86_64 Assembly kernel**. Both of the kernels will be tested **at least 30 times** to get the average time of their execution. This will be used for the analysis later on. The arrays are populated with **random** float numbers. The size of array to be tested are **2<sup>20</sup>**, **2<sup>24</sup>**, and **2<sup>30</sup>**. The program will run on the **debug mode** of the Visual Studio and on the **release mode** of the Visual Studio.
 ## Screenshot of the C Output
 This screenshot is taken from the program when n is equal to 2<sup>20</sup>.
 
