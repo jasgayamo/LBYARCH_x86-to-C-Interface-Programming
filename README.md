@@ -45,6 +45,7 @@ The program is run for thirty (30) times to get the average runtime of the kerne
 | 28 | 1073741824 | 3.087  |
 | 29 | 1073741824 | 3.088  |
 | 30 | 1073741824 | 3.087  |
+| Average Runtime | 3.0386 seconds | 
 
 
 ## Runtime in the x86_64 Assembly Kernel and Its Average on Debug Mode
@@ -82,6 +83,7 @@ The program is run for thirty (30) times to get the average runtime of the kerne
 | 28 | 1048576    | 0.001  |
 | 29 | 1048576    | 0.001  |
 | 30 | 1048576    | 0.001  |
+| Average Runtime | 0.00203  seconds | 
 
 ## Runtime in the C Kernel and Its Average on Release Mode
 The program is run for thirty (30) times to get the average runtime of the kernel.
