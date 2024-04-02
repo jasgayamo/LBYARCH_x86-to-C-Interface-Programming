@@ -1,3 +1,4 @@
+; S14 Marc Lowell Anthony O. Tasarra Jasmine B. Gayamo
 section .text
 global dotProduct86
 
