@@ -51,4 +51,18 @@ The program is run for thirty (30) times to get the average runtime of the kerne
 | Cell 5 | Extra5 | Extra1 |
 
 ## Analysis
-
+### Debug Mode
+When operating in debug mode, the code execution tends to be unoptimized and is likely
+to incur longer execution times as compared to release mode, mainly due to the presence of
+additional debugging information and less aggressive compiler optimizations. We conducted 30
+runs in debug mode and recorded the execution times of the C and assembly implementations.
+Despite the possibility of extended execution times due to debugging overhead, we observed
+that the debug mode runs demonstrated consistent and stable behavior throughout.
+### Release Mode
+In contrast to debug mode, release mode compilation involves optimizing code execution
+to maximize performance. We also conducted 30 runs of the program in release mode to
+capture the execution times. The optimizations applied during release mode compilation
+resulted in shorter execution times compared to debug mode. This is because, during release
+mode compilation, the compiler eliminates overhead and unnecessary functions, which
+enhances performance. In release mode, the code is optimized for performance by the compiler,
+resulting in a notable improvement in execution times.
